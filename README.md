@@ -2,7 +2,7 @@
 
 ![Next.js 16 - a modern template repo](docs/images/nextjs-hero.png)
 
-*A Next.js 16.4 template. Lint, format, type and unit-test checks run on every commit, and end-to-end tests on every push. Every PR repeats these checks on GitHub and adds end-to-end tests against a Vercel Preview. A branch ruleset ([one-time setup](docs/project-setup.md)) blocks merging to `main` until they pass. Merging deploys to Vercel Production, where the end-to-end tests run again. Dependabot keeps dependencies current. Claude Code is set up, plugins included. [You choose the rest](#you-choose-the-rest): UI components, database, etc.*
+*A Next.js 16.4 template. Lint, format, type and unit-test checks run on every commit, and end-to-end tests on every push. Every PR repeats these checks on GitHub and adds end-to-end tests against a Vercel Preview. A branch ruleset ([one-time setup](docs/project-setup.md)) blocks merging to `main` until they pass. Merging deploys to Vercel Production, where the end-to-end tests run again. Dependabot opens PRs automatically for security fixes and GitHub Actions updates. Claude Code is set up, plugins included. [You choose the rest](#you-choose-the-rest): UI components, database, etc.*
 
 <div align="left">
   <a href="https://nextjs-template-hello.vercel.app" target="_blank">
@@ -133,7 +133,7 @@ For exact list see [`package.json`](package.json)
 
 | Category | Tool | What it does |
 | :------- | :--- | :----------- |
-| Runtime | [Node.js 26 LTS](https://nodejs.org) | Pinned via [`.nvmrc`](.nvmrc); `engines` in [`package.json`](package.json) bounds it to the 26 line |
+| Runtime | [Node.js 26 LTS](https://nodejs.org) | Major version set in [`.nvmrc`](.nvmrc), and in `engines` and `@types/node` in [`package.json`](package.json); raise all three together |
 | Framework | [Next.js 16.4](https://nextjs.org) | Core webapp foundation — routing, rendering, API routes, optimisation, and builds |
 | Language | [TypeScript 6](https://www.typescriptlang.org) | Static type checking with strict mode enabled — not 7 yet, which can't run the Next.js editor plugin |
 | Styling | [Tailwind CSS v4](https://tailwindcss.com) | Utility-first CSS framework for rapid styling |
@@ -165,9 +165,9 @@ Maybe:
 ## This Repo Explained
 
 <details>
-<summary><b>Next.js Installation</b> — the <code>create-next-app</code> answers and updates</summary>
+<summary><b>Next.js Installation</b> — the <code>create-next-app</code> answers</summary>
 
-This template was initialised with the following options and then updated:
+This template was initialised with the following options:
 
 ```bash
 # Next.js installer
@@ -183,11 +183,6 @@ Would you like to use Cache Components?            ✔️ Yes
 Would you like to customise the import alias (@/* by default)? ❌ No
 Would you like to include AGENTS.md to guide coding agents?    ✔️ Yes
 Would you like to help improve Next.js by letting agents prepare anonymised feedback?  ❌ No
-
-# Update all dependencies to latest versions
-npm outdated                # Check outdated packages (2025-11-20)
-npx npm-check-updates -u    # Rewrite package.json with latest
-npm install                 # Install updated versions
 ```
 
 </details>
@@ -206,7 +201,7 @@ npm install                 # Install updated versions
 | 🚀 [`.github/workflows/test-e2e-vercel.yml`](.github/workflows/test-e2e-vercel.yml) | CI workflow: runs Playwright E2E tests against each live Vercel deploy, to catch what only breaks on Vercel; Preview must pass to merge, Production is checked after merge (can't block) |
 | 🚀 [`.github/workflows/test-e2e.yml`](.github/workflows/test-e2e.yml) | CI workflow: builds for production and runs Playwright E2E tests on every PR; must pass to merge |
 | 🚀 [`.github/workflows/test-unit.yml`](.github/workflows/test-unit.yml) | CI workflow: runs Vitest unit tests on every PR; must pass to merge |
-| 🚀 [`.github/dependabot.yml`](.github/dependabot.yml) | Dependabot config: weekly PRs to update npm packages and GitHub Actions |
+| 🚀 [`.github/dependabot.yml`](.github/dependabot.yml) | Dependabot config: weekly PRs to update GitHub Actions |
 | 🧪 [`.playwright/`](.playwright/) | Playwright test outputs (`test-results/`, `playwright-report/`), kept here instead of project root, plus `cli.config.json` for playwright-cli |
 | 🌺 `.playwright-cli/` | playwright-cli output: page snapshots and screenshots Claude takes when it drives a browser (git-ignored) |
 | [`.vscode/extensions.json`](.vscode/extensions.json) | Recommended VS Code extensions, so your editor uses this repo's tools: lint and format, Tailwind autocomplete, etc. |

@@ -52,12 +52,14 @@ Go to **Settings** → **General** on your GitHub repo.
 - ✅ **Delete head branches**: Enable "Automatically delete head branches"
 - ✅ **Features** (optional): Disable Wikis/Issues/Projects if not needed
 
-Go to **Settings** → **Advanced Security** → **Dependabot**. Version updates need no setup — [`.github/dependabot.yml`](../.github/dependabot.yml) opens weekly grouped PRs for npm and GitHub Actions. Security updates must be switched on per repo:
+Dependabot does two jobs:
 
-- ✅ **Dependabot alerts**: Enable (required before security updates)
-- ✅ **Dependabot security updates**: Enable (auto-PRs to fix vulnerabilities)
+1. **GitHub Actions updates**: weekly PRs from [`.github/dependabot.yml`](../.github/dependabot.yml), no setup needed.
+2. **Security updates** for npm packages and GitHub Actions: a PR as soon as a fixed version is out. Switch these on in **Settings** → **Advanced Security** → **Dependabot**:
+   - ✅ **Dependabot alerts**: Enable (required before security updates)
+   - ✅ **Dependabot security updates**: Enable
 
-Dependabot will only open PRs — it never merges them. You still review and merge manually.
+Dependabot only opens PRs — it never merges them. Other npm updates are up to you: check with `npm outdated`.
 
 ---
 
