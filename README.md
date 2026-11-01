@@ -165,9 +165,9 @@ Maybe:
 ## This Repo Explained
 
 <details>
-<summary><b>Next.js Installation</b> — the <code>create-next-app</code> answers and updates</summary>
+<summary><b>Next.js Installation</b> — the <code>create-next-app</code> answers</summary>
 
-This template was initialised with the following options and then updated:
+This template was initialised with the following options:
 
 ```bash
 # Next.js installer
@@ -183,11 +183,6 @@ Would you like to use Cache Components?            ✔️ Yes
 Would you like to customise the import alias (@/* by default)? ❌ No
 Would you like to include AGENTS.md to guide coding agents?    ✔️ Yes
 Would you like to help improve Next.js by letting agents prepare anonymised feedback?  ❌ No
-
-# Update all dependencies to latest versions
-npm outdated                # Check outdated packages (2025-11-20)
-npx npm-check-updates -u    # Rewrite package.json with latest
-npm install                 # Install updated versions
 ```
 
 </details>
