@@ -13,7 +13,7 @@ pre-commit:
       run: npm install && git add package-lock.json
 
     biome-check: # config: biome.jsonc
-      run: npx @biomejs/biome check --write --error-on-warnings --no-errors-on-unmatched --files-ignore-unknown=true {staged_files}
+      run: npx @biomejs/biome check --write --error-on-warnings --no-errors-on-unmatched {staged_files}
       stage_fixed: true
 
     markdown-lint: # config: .markdownlint-cli2.yaml
