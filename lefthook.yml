@@ -12,7 +12,7 @@ pre-commit:
       glob: "package.json"
       run: npm install && git add package-lock.json
 
-    biome-check: # config: biome.json
+    biome-check: # config: biome.jsonc
       run: npx @biomejs/biome check --write --error-on-warnings --no-errors-on-unmatched --files-ignore-unknown=true {staged_files}
       stage_fixed: true
 

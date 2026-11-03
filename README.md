@@ -211,7 +211,7 @@ Would you like to help improve Next.js by letting agents prepare anonymised feed
 | 🧪 [`.markdownlint-cli2.yaml`](.markdownlint-cli2.yaml) | Markdown linter config: rules to switch off and files to skip when checking markdown files |
 | 🌺 [`.mcp.json`](.mcp.json) | Claude Code MCP servers: Ref, for docs search (optional; set API key in `API_KEY_MCP_REF` environment variable) |
 | [`.nvmrc`](.nvmrc) | Node.js version pin: CI and `nvm use` read it, so your machine and CI run the same Node major |
-| 🧪 [`biome.json`](biome.json) | Biome config: one set of lint and format rules, used by your editor on save, git hooks and CI |
+| 🧪 [`biome.jsonc`](biome.jsonc) | Biome config: one set of lint and format rules, used by your editor on save, git hooks and CI |
 | 🧪 [`lefthook.yml`](lefthook.yml) | Git hooks config: lint, typecheck and unit tests on commit; build and E2E tests on push, so most problems are caught before CI |
 | 🅽 [`next.config.ts`](next.config.ts) | Next.js config: React Compiler, Cache Components, partial prefetching, typed routes |
 | 🅽 [`package.json`](package.json) | Packages the app uses and the versions each may update to, npm scripts, and the allowed Node versions |
