@@ -3,32 +3,25 @@
   "vcs": {
     "enabled": true,
     "clientKind": "git",
-    "useIgnoreFile": true,
-    "defaultBranch": "main"
+    "useIgnoreFile": true
   },
   "files": {
-    "ignoreUnknown": true,
-    "includes": ["**", "!node_modules", "!.next", "!dist", "!build"]
+    "ignoreUnknown": true
   },
-  "css": {
-    "parser": {
-      "tailwindDirectives": true
-    }
+  "tailwind": {
+    "stylesheet": "./app/globals.css"
   },
   "formatter": {
-    "enabled": true,
-    "indentStyle": "space",
-    "indentWidth": 2
+    "indentStyle": "space" // biome's default is tab
   },
   "markdown": {
     "formatter": {
-      "enabled": false
+      "enabled": false // handled by markdownlint
     }
   },
   "linter": {
-    "enabled": true,
     "rules": {
-      "preset": "recommended",
+      "preset": "recommended", // not redundant: without it, package-detected rules turn off
       "style": {
         "useConsistentTypeDefinitions": {
           "level": "error",
@@ -37,23 +30,24 @@
           }
         }
       },
-      "suspicious": {
-        "noUnknownAtRules": "off"
-      },
+      // experimental: run `npx biome migrate --write` after Biome upgrades
       "nursery": {
-        "useReactCompiler": "error"
+        "useReactCompiler": "error",
+        "noTailwindLegacyUtilities": "error",
+        "useTailwindShorthandClasses": {
+          "level": "error",
+          "fix": "safe"
+        },
+        "useTailwindSortedClasses": {
+          "level": "error",
+          "fix": "safe"
+        }
       }
     },
+    // explicit so these rules can't silently turn off
     "domains": {
       "next": "recommended",
       "react": "recommended"
-    }
-  },
-  "assist": {
-    "actions": {
-      "source": {
-        "organizeImports": "on"
-      }
     }
   }
 }

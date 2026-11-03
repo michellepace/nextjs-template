@@ -157,22 +157,22 @@ export default function Example() {
                     <td className="py-2 pr-3 pl-4 text-sm whitespace-nowrap text-gray-500 sm:pl-0 dark:text-gray-400">
                       {transaction.id}
                     </td>
-                    <td className="px-2 py-2 text-sm font-medium whitespace-nowrap text-gray-900 dark:text-white">
+                    <td className="p-2 text-sm font-medium whitespace-nowrap text-gray-900 dark:text-white">
                       {transaction.company}
                     </td>
-                    <td className="px-2 py-2 text-sm whitespace-nowrap text-gray-900 dark:text-white">
+                    <td className="p-2 text-sm whitespace-nowrap text-gray-900 dark:text-white">
                       {transaction.share}
                     </td>
-                    <td className="px-2 py-2 text-sm whitespace-nowrap text-gray-500 dark:text-gray-400">
+                    <td className="p-2 text-sm whitespace-nowrap text-gray-500 dark:text-gray-400">
                       {transaction.commission}
                     </td>
-                    <td className="px-2 py-2 text-sm whitespace-nowrap text-gray-500 dark:text-gray-400">
+                    <td className="p-2 text-sm whitespace-nowrap text-gray-500 dark:text-gray-400">
                       {transaction.price}
                     </td>
-                    <td className="px-2 py-2 text-sm whitespace-nowrap text-gray-500 dark:text-gray-400">
+                    <td className="p-2 text-sm whitespace-nowrap text-gray-500 dark:text-gray-400">
                       {transaction.quantity}
                     </td>
-                    <td className="px-2 py-2 text-sm whitespace-nowrap text-gray-500 dark:text-gray-400">
+                    <td className="p-2 text-sm whitespace-nowrap text-gray-500 dark:text-gray-400">
                       {transaction.netAmount}
                     </td>
                     <td className="py-2 pr-4 pl-3 text-right text-sm font-medium whitespace-nowrap sm:pr-0">
