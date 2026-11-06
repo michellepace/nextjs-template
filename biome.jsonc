@@ -1,0 +1,53 @@
+{
+  "$schema": "https://biomejs.dev/schemas/2.6.6/schema.json",
+  "vcs": {
+    "enabled": true,
+    "clientKind": "git",
+    "useIgnoreFile": true
+  },
+  "files": {
+    "includes": ["**", "!**/*.md"], // Markdown is handled by markdownlint
+    "ignoreUnknown": true
+  },
+  "tailwind": {
+    "stylesheet": "./app/globals.css"
+  },
+  "formatter": {
+    "indentStyle": "space" // biome's default is tab
+  },
+  "linter": {
+    "rules": {
+      "preset": "recommended", // not redundant: without it, package-detected rules turn off
+      "style": {
+        "useConsistentTypeDefinitions": {
+          "level": "error",
+          "options": {
+            "style": "type"
+          }
+        }
+      },
+      // experimental: run `npx biome migrate --write` after Biome upgrades
+      "nursery": {
+        "useReactCompiler": "error",
+        "noTailwindLegacyUtilities": "error",
+        "useTailwindShorthandClasses": {
+          "level": "error",
+          "fix": "safe"
+        },
+        "useTailwindSortedClasses": {
+          "level": "error",
+          "fix": "safe"
+        }
+      }
+    },
+    // explicit so these rules can't silently turn off
+    "domains": {
+      "next": "recommended",
+      "react": "recommended"
+    }
+  },
+  "overrides": [
+    // the claude CLI rewrites this file on every config change
+    { "includes": [".claude/settings.json"], "formatter": { "enabled": false } }
+  ]
+}
