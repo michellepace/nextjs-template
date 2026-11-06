@@ -45,5 +45,9 @@
       "next": "recommended",
       "react": "recommended"
     }
-  }
+  },
+  "overrides": [
+    // the claude CLI rewrites this file on every config change
+    { "includes": [".claude/settings.json"], "formatter": { "enabled": false } }
+  ]
 }
