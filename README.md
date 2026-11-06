@@ -59,7 +59,8 @@ Install the tools Claude Code's TypeScript plugin and browser skill need:
 # typescript-lsp plugin runs this. It then uses the project's TypeScript
 npm install -g typescript-language-server
 
-# Browser automation for Claude; refreshes the skill in .claude/skills/playwright-cli/
+# Browser automation for Claude. Rerun both lines to upgrade the CLI:
+# the second line rewrites .claude/skills/playwright-cli/ to match it
 npm install -g @playwright/cli@latest
 playwright-cli install --skills
 ```
