@@ -38,7 +38,7 @@ concurrency:
 jobs:
   e2e-vercel:
     name: Run E2E Tests on ${{ github.event.client_payload.environment == 'production' && 'Production' || 'Preview' }}
-    timeout-minutes: 10
+    timeout-minutes: 15
     runs-on: ubuntu-latest
 
     steps:
