@@ -1,7 +1,7 @@
 {
   "browser": {
     "browserName": "chromium",
-    "launchOptions": { "channel": "chrome", "headless": true },
+    "launchOptions": { "headless": true },
     "contextOptions": { "viewport": { "width": 390, "height": 844 } }
   },
   "codegen": "typescript",
